@@ -10,7 +10,7 @@ export function WhySolar() {
   return (
     <section
       id="why-solar"
-      className="px-[clamp(0.75rem,3vw,2rem)] py-[clamp(4.75rem,10vw,8rem)]"
+      className="section-pad"
     >
       <div className="mx-auto w-[min(94%,72rem)]">
         <div className="mx-auto max-w-2xl text-center" data-animate>
@@ -24,8 +24,8 @@ export function WhySolar() {
           </p>
         </div>
 
-        <div className="mt-12 grid items-stretch gap-5 lg:grid-cols-[1fr_minmax(220px,32%)_1fr] lg:gap-6">
-          <div className="flex flex-col gap-5">
+        <div className="mt-10 grid items-stretch gap-5 sm:mt-12 md:grid-cols-2 lg:grid-cols-[1fr_minmax(220px,32%)_1fr] lg:gap-6">
+          <div className="flex flex-col gap-5 md:col-span-2 lg:col-span-1 lg:col-start-1">
             {left.map((feature, index) => (
               <FeatureCard key={feature.id} {...feature} delay={index + 1} />
             ))}
@@ -33,7 +33,7 @@ export function WhySolar() {
 
           <div
             data-animate="scale"
-            className="group relative min-h-[min(58vw,22rem)] overflow-hidden rounded-[clamp(1.1rem,2.5vw,1.4rem)] lg:min-h-full"
+            className="group relative min-h-[min(58vw,22rem)] overflow-hidden rounded-[clamp(1.1rem,2.5vw,1.4rem)] md:col-span-2 md:min-h-72 lg:col-span-1 lg:col-start-2 lg:min-h-full"
           >
             <Image
               src="/images/technician.jpg"
@@ -44,7 +44,7 @@ export function WhySolar() {
             />
           </div>
 
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 md:col-span-2 lg:col-span-1 lg:col-start-3">
             {right.map((feature, index) => (
               <FeatureCard key={feature.id} {...feature} delay={index + 3} />
             ))}

@@ -111,7 +111,16 @@ export function Navbar() {
     const observer = new ResizeObserver(apply);
     observer.observe(bar);
     return () => observer.disconnect();
-  }, []);
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [open]);
 
   function onNavClick(id: NavId) {
     setActive(id);
@@ -126,19 +135,19 @@ export function Navbar() {
     <header className="site-header" data-menu-open={open ? "true" : "false"}>
       <div
         ref={barRef}
-        className="mx-auto flex w-[min(94%,72rem)] items-center justify-between gap-4 py-[clamp(0.65rem,1.6vw,1rem)]"
+        className="mx-auto flex w-[min(94%,72rem)] items-center justify-between gap-3 py-[clamp(0.65rem,1.6vw,1rem)] sm:gap-4"
       >
         <a
           href="#home"
           aria-label="GVT home"
-          className="site-header-mark"
+          className="site-header-mark shrink-0"
           onClick={() => onNavClick("home")}
         >
           <BrandMark priority />
         </a>
 
         <nav
-          className="site-nav hidden items-center rounded-full p-1 lg:flex"
+          className="site-nav hidden max-w-[min(58vw,34rem)] items-center overflow-x-auto rounded-full p-1 [-ms-overflow-style:none] [scrollbar-width:none] md:flex [&::-webkit-scrollbar]:hidden"
           aria-label="Primary"
         >
           {NAV_LINKS.map((link) => {
@@ -148,7 +157,7 @@ export function Navbar() {
               <a
                 key={link.id}
                 href={link.href}
-                className={`site-nav-link rounded-full px-[clamp(0.55rem,1.1vw,0.9rem)] py-2 text-sm font-medium ${
+                className={`site-nav-link shrink-0 rounded-full px-2 py-2 text-xs font-medium sm:px-3 sm:text-sm lg:px-[clamp(0.55rem,1.1vw,0.9rem)] ${
                   isActive ? "is-active" : ""
                 }`}
                 onClick={() => onNavClick(link.id)}
@@ -159,13 +168,13 @@ export function Navbar() {
           })}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden shrink-0 md:block">
           <CtaButton href="#contact">Contact Us</CtaButton>
         </div>
 
         <button
           type="button"
-          className="site-menu-btn inline-flex size-10 items-center justify-center rounded-full border lg:hidden"
+          className="site-menu-btn inline-flex size-11 shrink-0 items-center justify-center rounded-full border md:hidden"
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((current) => !current)}
@@ -175,21 +184,28 @@ export function Navbar() {
       </div>
 
       {open ? (
-        <div className="border-t border-zinc-100 bg-white px-[clamp(0.75rem,3vw,2rem)] py-4 lg:hidden">
+        <div className="border-t border-zinc-100 bg-white px-[clamp(0.75rem,3vw,2rem)] py-4 md:hidden">
           <nav className="flex flex-col gap-1" aria-label="Mobile">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.id}
-                href={link.href}
-                className="rounded-xl px-3 py-2.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
-                onClick={() => onNavClick(link.id)}
-              >
-                {link.label}
-              </a>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = isNavActive(link.id, active);
+              return (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  className={`rounded-xl px-3 py-3 text-sm font-medium ${
+                    isActive
+                      ? "bg-navy text-white"
+                      : "text-zinc-700 hover:bg-zinc-50"
+                  }`}
+                  onClick={() => onNavClick(link.id)}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
             <a
               href="#contact"
-              className="rounded-xl px-3 py-2.5 text-sm font-semibold text-navy"
+              className="rounded-xl px-3 py-3 text-sm font-semibold text-navy hover:bg-zinc-50"
               onClick={() => setOpen(false)}
             >
               Contact Us

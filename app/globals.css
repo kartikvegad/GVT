@@ -25,6 +25,30 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: clip;
+}
+
+.section-pad {
+  padding-inline: clamp(0.75rem, 3vw, 2rem);
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+}
+
+@media (min-width: 640px) {
+  .section-pad {
+    padding-block: clamp(4rem, 9vw, 7rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-pad {
+    padding-block: clamp(4.75rem, 10vw, 8rem);
+  }
 }
 
 section[id] {
@@ -35,9 +59,12 @@ section[id] {
   scroll-margin-top: 0;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
+.touch-target {
+  display: inline-flex;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  align-items: center;
+  justify-content: center;
 }
 
 ::selection {
@@ -318,12 +345,89 @@ body {
 }
 
 @media (max-width: 1023px) {
+  :root {
+    --hero-p: 1;
+    --hero-inset-x: clamp(0.75rem, 3vw, 2rem);
+    --hero-card-h: min(72vh, 32rem);
+    --hero-radius: clamp(1.1rem, 3vw, 1.5rem);
+  }
+
+  .hero-pin {
+    height: auto;
+  }
+
+  .hero-sticky {
+    position: relative;
+    height: auto;
+    padding-top: var(--nav-h);
+    padding-inline: var(--hero-inset-x);
+  }
+
+  .hero-frame {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    height: min(72vh, 32rem);
+    min-height: 22rem;
+    overflow: hidden;
+    border-radius: var(--hero-radius);
+    will-change: auto;
+  }
+
+  .site-header {
+    background-color: rgb(255 255 255 / 0.92);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.06);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .site-header-mark {
+    filter: none;
+  }
+
+  .site-nav {
+    background: #f4f4f5;
+  }
+
+  .site-nav-link {
+    color: #71717a;
+  }
+
+  .site-nav-link:hover {
+    color: #151515;
+  }
+
+  .site-menu-btn {
+    color: #151515;
+    border-color: #e4e4e7;
+  }
+
   .card-fill-blob {
     display: none;
   }
+}
 
+@media (max-width: 1023px) and (hover: hover) {
   .card-fill:hover {
     background-color: var(--navy);
+  }
+}
+
+@media (max-width: 1023px) and (hover: none) {
+  .card-fill:active {
+    background-color: var(--navy);
+  }
+
+  .card-fill:active h3,
+  .card-fill:active p,
+  .card-fill:active .card-more-info,
+  .card-fill:active .text-icon-blue {
+    color: #fff;
+  }
+
+  .card-fill:active .text-icon-blue svg {
+    stroke: #fff;
   }
 }
 
@@ -408,12 +512,11 @@ body {
   }
 
   .hero-sticky {
-  position: relative;
-  height: auto;
-  padding-top: var(--nav-h);
-  padding-right: var(--hero-inset-x);
-  padding-left: var(--hero-inset-x);
-}
+    position: relative;
+    height: auto;
+    padding-top: var(--nav-h);
+    padding-inline: var(--hero-inset-x);
+  }
 
   .hero-frame {
     position: relative;

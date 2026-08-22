@@ -4,7 +4,7 @@ import { PROJECTS } from "@/lib/site";
 
 export function Projects() {
   return (
-    <section id="projects" className="bg-zinc-50 px-[clamp(0.75rem,3vw,2rem)] py-[clamp(4.75rem,10vw,8rem)]">
+    <section id="projects" className="section-pad bg-zinc-50">
       <div className="mx-auto w-[min(94%,72rem)]">
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end" data-animate>
           <div className="max-w-xl">
@@ -21,7 +21,7 @@ export function Projects() {
           </p>
         </div>
 
-        <div className="mt-10 -mx-2.5">
+        <div className="mt-10">
           <CardCarousel>
             {PROJECTS.map((project) => (
               <div

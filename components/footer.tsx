@@ -20,12 +20,16 @@ export function Footer() {
           </p>
           <nav className="mt-3 flex flex-col gap-2 text-sm text-zinc-600" aria-label="Footer">
             {NAV_LINKS.map((link) => (
-              <a key={link.id} href={link.href} className="hover:text-navy">
+              <a
+                key={link.id}
+                href={link.href}
+                className="block rounded-lg py-2 hover:text-navy"
+              >
                 {link.label}
               </a>
             ))}
             {FOOTER_LINKS.map((link) => (
-              <a key={link.href} href={link.href} className="hover:text-navy">
+              <a key={link.href} href={link.href} className="block rounded-lg py-2 hover:text-navy">
                 {link.label}
               </a>
             ))}

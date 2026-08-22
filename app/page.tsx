@@ -15,7 +15,7 @@ import { WhySolar } from "@/components/why-solar";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col overflow-x-clip">
       <MotionRoot />
       <Navbar />
       <main className="flex-1">

@@ -7,7 +7,7 @@ export function Faq() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="faq" className="px-[clamp(0.75rem,3vw,2rem)] py-[clamp(4.75rem,10vw,8rem)]">
+    <section id="faq" className="section-pad">
       <div className="mx-auto w-[min(94%,40rem)]">
         <div className="text-center" data-animate>
           <p className="text-sm font-semibold tracking-wide text-navy uppercase">
@@ -25,7 +25,7 @@ export function Faq() {
               <li key={item.question}>
                 <button
                   type="button"
-                  className="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6"
+                  className="flex w-full min-h-11 items-start justify-between gap-4 px-5 py-4 text-left sm:px-6"
                   aria-expanded={isOpen}
                   onClick={() => setOpen(isOpen ? -1 : index)}
                 >

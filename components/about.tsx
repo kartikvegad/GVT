@@ -4,8 +4,8 @@ import { MARQUEE_TAGS } from "@/lib/site";
 export function About() {
   return (
     <section id="about" className="bg-zinc-50">
-      <div className="px-[clamp(0.75rem,3vw,2rem)] pt-[clamp(4.75rem,10vw,8rem)] pb-12 sm:pb-14">
-        <div className="mx-auto grid w-[min(94%,72rem)] gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
+      <div className="section-pad pb-0">
+        <div className="mx-auto grid w-[min(94%,72rem)] gap-8 md:grid-cols-2 md:items-start md:gap-12 lg:gap-16">
           <div data-animate="left">
             <p className="text-sm font-semibold tracking-wide text-navy uppercase">
               About us
@@ -32,7 +32,7 @@ export function About() {
           </div>
         </div>
       </div>
-      <Marquee items={MARQUEE_TAGS} />
+      <Marquee items={MARQUEE_TAGS} className="mt-8 sm:mt-10" />
     </section>
   );
 }

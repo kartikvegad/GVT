@@ -3,7 +3,7 @@ import { SOLUTIONS } from "@/lib/site";
 
 export function Solutions() {
   return (
-    <section id="services" className="bg-zinc-50 px-[clamp(0.75rem,3vw,2rem)] py-[clamp(4.75rem,10vw,8rem)]">
+    <section id="services" className="section-pad bg-zinc-50">
       <div className="mx-auto w-[min(94%,72rem)]">
         <div className="max-w-2xl" data-animate>
           <p className="text-sm font-semibold tracking-wide text-navy uppercase">
@@ -18,7 +18,7 @@ export function Solutions() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2">
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
           {SOLUTIONS.map((solution) => (
             <div key={solution.title} className="img-card" data-animate>
               <article className="img-card-inner">

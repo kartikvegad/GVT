@@ -12,8 +12,8 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-zinc-50 px-[clamp(0.75rem,3vw,2rem)] py-[clamp(4.75rem,10vw,8rem)]">
-      <div className="mx-auto grid w-[min(94%,72rem)] gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+    <section id="contact" className="section-pad bg-zinc-50">
+      <div className="mx-auto grid w-[min(94%,72rem)] gap-10 md:grid-cols-2 md:items-start lg:grid-cols-[0.9fr_1.1fr]">
         <div data-animate="left">
           <p className="text-sm font-semibold tracking-wide text-navy uppercase">
             Contact
@@ -84,7 +84,7 @@ export function Contact() {
                   required
                   name="name"
                   autoComplete="name"
-                  className="mt-1.5 w-full rounded-xl border border-zinc-200 px-3 py-2.5 text-sm outline-none focus:border-navy"
+                  className="mt-1.5 w-full min-h-11 rounded-xl border border-zinc-200 px-3 py-3 text-sm outline-none focus:border-navy"
                   placeholder="Anita Sharma"
                 />
               </label>
@@ -95,7 +95,7 @@ export function Contact() {
                   name="phone"
                   type="tel"
                   autoComplete="tel"
-                  className="mt-1.5 w-full rounded-xl border border-zinc-200 px-3 py-2.5 text-sm outline-none focus:border-navy"
+                  className="mt-1.5 w-full min-h-11 rounded-xl border border-zinc-200 px-3 py-3 text-sm outline-none focus:border-navy"
                   placeholder="+91 98XXX XXXXX"
                 />
               </label>
@@ -105,7 +105,7 @@ export function Contact() {
                   required
                   name="city"
                   defaultValue="Delhi"
-                  className="mt-1.5 w-full rounded-xl border border-zinc-200 bg-white px-3 py-2.5 text-sm outline-none focus:border-navy"
+                  className="mt-1.5 w-full min-h-11 rounded-xl border border-zinc-200 bg-white px-3 py-3 text-sm outline-none focus:border-navy"
                 >
                   {CITIES.map((city) => (
                     <option key={city} value={city}>
@@ -119,7 +119,7 @@ export function Contact() {
                 <select
                   name="property"
                   defaultValue="Independent house"
-                  className="mt-1.5 w-full rounded-xl border border-zinc-200 bg-white px-3 py-2.5 text-sm outline-none focus:border-navy"
+                  className="mt-1.5 w-full min-h-11 rounded-xl border border-zinc-200 bg-white px-3 py-3 text-sm outline-none focus:border-navy"
                 >
                   {PROPERTY_TYPES.map((type) => (
                     <option key={type} value={type}>
@@ -133,7 +133,7 @@ export function Contact() {
                 <select
                   name="timeline"
                   defaultValue="1–3 months"
-                  className="mt-1.5 w-full rounded-xl border border-zinc-200 bg-white px-3 py-2.5 text-sm outline-none focus:border-navy"
+                  className="mt-1.5 w-full min-h-11 rounded-xl border border-zinc-200 bg-white px-3 py-3 text-sm outline-none focus:border-navy"
                 >
                   <option>Within 1 month</option>
                   <option>1–3 months</option>
@@ -145,7 +145,7 @@ export function Contact() {
                 <textarea
                   name="message"
                   rows={3}
-                  className="mt-1.5 w-full rounded-xl border border-zinc-200 px-3 py-2.5 text-sm outline-none focus:border-navy"
+                  className="mt-1.5 w-full min-h-11 rounded-xl border border-zinc-200 px-3 py-3 text-sm outline-none focus:border-navy"
                   placeholder="Roof type, sanctioned load, or any questions…"
                 />
               </label>

@@ -3,10 +3,7 @@ import { EQUIPMENT, WHY_CHOOSE } from "@/lib/site";
 
 export function Quality() {
   return (
-    <section
-      id="quality"
-      className="px-[clamp(0.75rem,3vw,2rem)] pt-[clamp(4.75rem,10vw,8rem)] pb-8"
-    >
+    <section id="quality" className="section-pad pb-10 sm:pb-12">
       <div className="mx-auto w-[min(94%,72rem)]">
         <div className="mx-auto max-w-2xl text-center" data-animate>
           <p className="text-sm font-semibold tracking-wide text-navy uppercase">

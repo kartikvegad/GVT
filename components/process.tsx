@@ -2,7 +2,7 @@ import { PROCESS_STEPS, type ProcessId } from "@/lib/site";
 
 export function Process() {
   return (
-    <section id="process" className="relative overflow-hidden px-[clamp(0.75rem,3vw,2rem)] py-[clamp(4.75rem,10vw,8rem)]">
+    <section id="process" className="section-pad relative overflow-hidden">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,#163a5f0f,transparent_42%)]"
         aria-hidden="true"
@@ -40,7 +40,7 @@ export function Process() {
                   className="relative grid items-center gap-4 lg:grid-cols-[1fr_4.5rem_1fr] lg:gap-8 lg:py-7"
                 >
                   <article
-                    className={`ml-16 rounded-[1.5rem] border border-zinc-200/80 bg-white/90 p-6 shadow-sm backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg lg:row-start-1 lg:ml-0 lg:p-7 ${
+                    className={`ml-12 rounded-[1.5rem] border border-zinc-200/80 bg-white/90 p-5 shadow-sm backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:ml-16 sm:p-6 lg:row-start-1 lg:ml-0 lg:p-7 ${
                       even ? "lg:col-start-1 lg:text-right" : "lg:col-start-3"
                     }`}
                   >
