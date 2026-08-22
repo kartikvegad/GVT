@@ -147,7 +147,7 @@ export function Navbar() {
         </a>
 
         <nav
-          className="site-nav hidden max-w-[min(58vw,34rem)] items-center overflow-x-auto rounded-full p-1 [-ms-overflow-style:none] [scrollbar-width:none] md:flex [&::-webkit-scrollbar]:hidden"
+          className="site-nav hidden items-center gap-0.5 rounded-full px-1.5 py-1 lg:flex xl:gap-1"
           aria-label="Primary"
         >
           {NAV_LINKS.map((link) => {
@@ -157,7 +157,7 @@ export function Navbar() {
               <a
                 key={link.id}
                 href={link.href}
-                className={`site-nav-link shrink-0 rounded-full px-2 py-2 text-xs font-medium sm:px-3 sm:text-sm lg:px-[clamp(0.55rem,1.1vw,0.9rem)] ${
+                className={`site-nav-link shrink-0 rounded-full px-2.5 py-2 text-xs font-medium whitespace-nowrap xl:px-3.5 xl:text-sm ${
                   isActive ? "is-active" : ""
                 }`}
                 onClick={() => onNavClick(link.id)}
@@ -168,13 +168,13 @@ export function Navbar() {
           })}
         </nav>
 
-        <div className="hidden shrink-0 md:block">
+        <div className="hidden shrink-0 lg:block">
           <CtaButton href="#contact">Contact Us</CtaButton>
         </div>
 
         <button
           type="button"
-          className="site-menu-btn inline-flex size-11 shrink-0 items-center justify-center rounded-full border md:hidden"
+          className="site-menu-btn inline-flex size-11 shrink-0 items-center justify-center rounded-full border lg:hidden"
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((current) => !current)}
@@ -184,7 +184,7 @@ export function Navbar() {
       </div>
 
       {open ? (
-        <div className="border-t border-zinc-100 bg-white px-[clamp(0.75rem,3vw,2rem)] py-4 md:hidden">
+        <div className="border-t border-zinc-100 bg-white px-[clamp(0.75rem,3vw,2rem)] py-4 lg:hidden">
           <nav className="flex flex-col gap-1" aria-label="Mobile">
             {NAV_LINKS.map((link) => {
               const isActive = isNavActive(link.id, active);
