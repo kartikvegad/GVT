@@ -15,7 +15,7 @@ export function About() {
             In a country with abundant sunlight but rising power bills, too many
             homeowners still feel stuck — too many vendors, confusing prices,
             technical jargon, and weak after-sales. GVT was built to change
-            that, starting with homes across Delhi NCR.
+            that, starting with homes across India.
           </p>
           <p>
             We are an MNRE-aligned solar EPC: consultancy, design, supply,

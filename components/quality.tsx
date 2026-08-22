@@ -1,4 +1,4 @@
-import { EQUIPMENT, PARTNERS, WHY_CHOOSE } from "@/lib/site";
+import { EQUIPMENT, WHY_CHOOSE } from "@/lib/site";
 
 export function Quality() {
   return (
@@ -13,7 +13,7 @@ export function Quality() {
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-zinc-500 sm:text-base">
             TopCon modules, smart inverters, branded cables, and rust-free
-            structures — chosen for Delhi heat, monsoon, and 25-year output.
+            structures — chosen for Indian heat, monsoon, and 25-year output.
           </p>
         </div>
 
@@ -53,15 +53,10 @@ export function Quality() {
           </div>
         </div>
 
-        <div className="mt-14 text-center">
+        <div className="mt-14 text-center" data-animate>
           <p className="text-sm font-medium text-zinc-400">
             Modules and inverters from India’s leading manufacturers
           </p>
-          <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-semibold tracking-wide text-zinc-700 uppercase">
-            {PARTNERS.map((partner) => (
-              <li key={partner}>{partner}</li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>

@@ -9,6 +9,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const ids = [
@@ -47,6 +48,7 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
+    setReady(true);
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -56,7 +58,7 @@ export function Navbar() {
   return (
     <header
       className={`sticky top-0 z-50 bg-white/90 backdrop-blur-md transition-shadow duration-300 ${
-        scrolled ? "shadow-sm" : ""
+        ready && scrolled ? "shadow-sm" : ""
       }`}
     >
       <div className="mx-auto flex w-[min(94%,72rem)] items-center justify-between gap-4 py-[clamp(0.65rem,1.6vw,1rem)]">

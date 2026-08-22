@@ -1,5 +1,5 @@
 import { BrandMark } from "@/components/brand-mark";
-import { FOOTER_LINKS, NAV_LINKS } from "@/lib/site";
+import { FOOTER_LINKS, NAV_LINKS, PRESENCE_CITIES } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -11,7 +11,7 @@ export function Footer() {
           </a>
           <p className="mt-3 max-w-xs text-sm text-zinc-500">
             MNRE-aligned solar EPC for homes, societies, and businesses across
-            Delhi NCR. Your partner from rooftop survey to 25-year support.
+            India. Your partner from rooftop survey to 25-year support.
           </p>
         </div>
         <div>
@@ -35,12 +35,10 @@ export function Footer() {
           <p className="text-xs font-semibold tracking-wide text-zinc-400 uppercase">
             Our presence
           </p>
-          <ul className="mt-3 space-y-2 text-sm text-zinc-600">
-            <li>Solar in Gurugram</li>
-            <li>Solar in Faridabad</li>
-            <li>Solar in Delhi</li>
-            <li>Solar in Noida</li>
-            <li>Solar in Ghaziabad</li>
+          <ul className="mt-3 columns-2 space-y-2 text-sm text-zinc-600">
+            {PRESENCE_CITIES.map((city) => (
+              <li key={city}>Solar in {city}</li>
+            ))}
           </ul>
         </div>
         <div>
@@ -50,13 +48,13 @@ export function Footer() {
           <ul className="mt-3 space-y-2 text-sm text-zinc-600">
             <li>+91 98765 43210</li>
             <li>hello@gvt.in</li>
-            <li>Sector 57, Gurugram, Haryana</li>
+            <li>Pan-India installations</li>
           </ul>
         </div>
       </div>
       <div className="mx-auto mt-8 flex w-[min(94%,72rem)] flex-col gap-2 border-t border-zinc-100 pt-6 text-xs text-zinc-400 sm:flex-row sm:justify-between">
-        <p>© {new Date().getFullYear()} GVT. Prototype website for demonstration.</p>
-        <p>Serving Delhi NCR from Gurugram, Haryana.</p>
+        <p>© {new Date().getFullYear()} GVT. All rights reserved.</p>
+        <p>Serving homes and businesses across India.</p>
       </div>
     </footer>
   );

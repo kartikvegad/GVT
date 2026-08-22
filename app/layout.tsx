@@ -9,15 +9,15 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "GVT | Solar Installation Company in Delhi NCR",
+  title: "GVT | Solar Installation Company in India",
   description:
-    "GVT is an MNRE-aligned solar EPC for Delhi NCR homes and businesses. Cut electricity bills by up to 90% with TopCon rooftop solar, net metering, and subsidy support.",
+    "GVT is an MNRE-aligned solar EPC for homes and businesses across India. Cut electricity bills by up to 90% with TopCon rooftop solar, net metering, and subsidy support.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en-IN" className={`${plusJakarta.variable} h-full antialiased`}>
-      <body className={`${plusJakarta.className} min-h-full bg-white text-foreground`}>
+    <html lang="en-IN" className={`${plusJakarta.variable} min-h-screen antialiased`}>
+      <body className={`${plusJakarta.className} min-h-screen bg-white text-foreground`}>
         {children}
       </body>
     </html>

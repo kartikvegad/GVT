@@ -18,7 +18,7 @@ export function Trust() {
         </ul>
 
         <div data-animate>
-          <p className="text-sm font-medium text-zinc-400">Trusted by families across Delhi NCR</p>
+          <p className="text-sm font-medium text-zinc-400">Trusted by families across India</p>
           <h2 className="mt-3 max-w-2xl text-[clamp(1.4rem,2.6vw,2rem)] leading-snug font-bold tracking-tight text-zinc-900">
             MNRE-aligned solar EPC — clear pricing, certified TopCon panels,
             and guaranteed protection from survey to 25-year performance.

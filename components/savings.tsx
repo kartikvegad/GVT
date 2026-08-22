@@ -21,7 +21,7 @@ export function Savings() {
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-zinc-500 sm:text-base">
             Pick your monthly electricity bill. We’ll suggest a typical system
-            size and yearly saving for a Delhi NCR rooftop — then confirm it on
+            size and yearly saving for an Indian rooftop — then confirm it on
             a free site visit.
           </p>
         </div>

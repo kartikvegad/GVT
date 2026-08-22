@@ -14,7 +14,7 @@ export function Solutions() {
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-zinc-500 sm:text-base">
             Residential, society, and industrial plants — on-grid, hybrid, or
-            RESCO — designed around your load, roof, and DISCOM rules in North India.
+            RESCO — designed around your load, roof, and DISCOM rules anywhere in India.
           </p>
         </div>
 

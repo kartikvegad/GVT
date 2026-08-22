@@ -42,28 +42,12 @@ body {
 }
 
 [data-animate] {
-  opacity: 0;
-  transform: translate3d(0, 2rem, 0);
-  transition:
-    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-[data-animate="left"] {
-  transform: translate3d(-2rem, 0, 0);
-}
-
-[data-animate="right"] {
-  transform: translate3d(2rem, 0, 0);
-}
-
-[data-animate="scale"] {
-  transform: scale(0.96);
+  opacity: 1;
+  transform: none;
 }
 
 [data-animate].is-in {
-  opacity: 1;
-  transform: none;
+  animation: fade-in-up 0.75s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 [data-delay="1"] {
@@ -102,20 +86,37 @@ body {
   }
 }
 
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee-track {
+  animation: marquee 32s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
 .hero-kenburns {
   animation: kenburns 18s ease-out forwards;
 }
 
 .hero-copy {
-  animation: fade-in-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fade-in-up 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero-copy-delay {
-  animation: fade-in-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+  animation: fade-in-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
 }
 
 .hero-copy-late {
-  animation: fade-in-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+  animation: fade-in-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -127,7 +128,8 @@ body {
   .hero-copy,
   .hero-copy-delay,
   .hero-copy-late,
-  .hero-kenburns {
+  .hero-kenburns,
+  .marquee-track {
     animation: none;
     opacity: 1;
     transform: none;

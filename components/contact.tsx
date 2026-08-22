@@ -22,9 +22,9 @@ export function Contact() {
             Book a free site visit
           </h2>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-zinc-500 sm:text-base">
-            No charges. No pushy sales. Share a few details and our Gurugram team
-            will call with a rooftop size, estimated savings, and next steps.
-            Prototype form — nothing is stored.
+            No charges. No pushy sales. Share a few details and our team
+            will call with a rooftop size, estimated savings, and next steps —
+            anywhere in India.
           </p>
 
           <ul className="mt-8 space-y-4 text-sm text-zinc-700">
@@ -44,13 +44,13 @@ export function Contact() {
               <span className="block text-xs font-semibold tracking-wide text-zinc-400 uppercase">
                 Office
               </span>
-              Sector 57, Gurugram, Haryana 122003
+              Pan-India site visits
             </li>
             <li>
               <span className="block text-xs font-semibold tracking-wide text-zinc-400 uppercase">
                 Serving
               </span>
-              Gurugram, Faridabad, Delhi, Noida &amp; Ghaziabad
+              Delhi, Mumbai, Bengaluru, Hyderabad, Chennai &amp; 20+ cities
             </li>
             <li>
               <span className="block text-xs font-semibold tracking-wide text-zinc-400 uppercase">
@@ -66,8 +66,8 @@ export function Contact() {
             <div className="flex min-h-64 flex-col justify-center">
               <h3 className="text-xl font-bold text-zinc-900">Request received</h3>
               <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-                Thanks — this is a prototype, so no email was sent. On a live site,
-                a GVT advisor would reach out within one business day.
+                Thanks. A GVT advisor will reach out within one business day
+                with a rooftop size, estimated savings, and next steps.
               </p>
               <button
                 type="button"
@@ -105,7 +105,7 @@ export function Contact() {
                 <select
                   required
                   name="city"
-                  defaultValue="Gurugram"
+                  defaultValue="Delhi"
                   className="mt-1.5 w-full rounded-xl border border-zinc-200 bg-white px-3 py-2.5 text-sm outline-none focus:border-navy"
                 >
                   {CITIES.map((city) => (

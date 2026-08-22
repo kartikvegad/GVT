@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CardCarousel } from "@/components/card-carousel";
 import { PROJECTS } from "@/lib/site";
 
 export function Projects() {
@@ -11,38 +12,39 @@ export function Projects() {
               Projects
             </p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
-              Trusted by homeowners across Delhi NCR
+              Installations across India
             </h2>
           </div>
           <p className="max-w-sm text-sm text-zinc-500">
-            Real rooftop types we install every week — on-grid and hybrid plants
-            in Faridabad, Delhi, Gurugram, and Noida. Prototype snapshots.
+            Sample rooftop and commercial plants from Bengaluru to Mumbai,
+            Hyderabad, Chennai, and Jaipur.
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-3">
-          {PROJECTS.map((project) => (
-            <article
-              key={project.title}
-              data-animate
-              className="group overflow-hidden rounded-[clamp(1.1rem,2.5vw,1.4rem)] bg-white shadow-sm ring-1 ring-zinc-200/80 transition duration-300 hover:-translate-y-1 hover:shadow-lg"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.alt}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  sizes="(max-width: 1024px) 94vw, 31vw"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold text-zinc-900">{project.title}</h3>
-                <p className="mt-1 text-sm text-zinc-500">{project.location}</p>
-                <p className="mt-3 text-sm font-medium text-navy">{project.result}</p>
-              </div>
-            </article>
-          ))}
+        <div className="mt-10 -mx-2.5">
+          <CardCarousel>
+            {PROJECTS.map((project) => (
+              <article
+                key={`${project.title}-${project.location}`}
+                className="group h-full overflow-hidden rounded-[clamp(1.1rem,2.5vw,1.4rem)] bg-white shadow-sm ring-1 ring-zinc-200/80"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.alt}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 1024px) 90vw, 31vw"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-zinc-900">{project.title}</h3>
+                  <p className="mt-1 text-sm text-zinc-500">{project.location}</p>
+                  <p className="mt-3 text-sm font-medium text-navy">{project.result}</p>
+                </div>
+              </article>
+            ))}
+          </CardCarousel>
         </div>
       </div>
     </section>

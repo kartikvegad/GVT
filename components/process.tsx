@@ -17,13 +17,17 @@ export function Process() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div
+            className="pointer-events-none absolute top-10 right-[6%] left-[6%] hidden h-px bg-zinc-200 lg:block"
+            aria-hidden="true"
+          />
           {PROCESS_STEPS.map((step, index) => (
             <article
               key={step.title}
               data-animate
               data-delay={String(index + 1)}
-              className="rounded-[clamp(1.1rem,2.5vw,1.4rem)] border border-zinc-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-md"
+              className="relative rounded-[clamp(1.1rem,2.5vw,1.4rem)] border border-zinc-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-md"
             >
               <span className="text-sm font-semibold text-icon-blue">
                 0{index + 1}

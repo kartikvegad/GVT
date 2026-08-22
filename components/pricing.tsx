@@ -12,7 +12,7 @@ export function Pricing() {
             Clear pricing. No hidden costs.
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-zinc-500 sm:text-base">
-            Typical on-grid costs for Delhi NCR. Final quotes depend on roof,
+            Typical on-grid costs for Indian rooftops. Final quotes depend on roof,
             structure, TopCon module choice, and the subsidy you are eligible for.
           </p>
         </div>
