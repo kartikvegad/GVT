@@ -2,25 +2,135 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #151515;
+  --navy: #163a5f;
+  --navy-hover: #0f2c4a;
+  --muted: #6b7280;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy: #163a5f;
+  --color-navy-hover: #0f2c4a;
+  --color-icon-blue: #2f6fb0;
+  --color-muted: #6b7280;
+  --font-sans: var(--font-plus-jakarta);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 5.5rem;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: #163a5f;
+  color: #ffffff;
+}
+
+.site-shell {
+  width: min(94%, 72rem);
+  margin-inline: auto;
+}
+
+[data-animate] {
+  opacity: 0;
+  transform: translate3d(0, 2rem, 0);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-animate="left"] {
+  transform: translate3d(-2rem, 0, 0);
+}
+
+[data-animate="right"] {
+  transform: translate3d(2rem, 0, 0);
+}
+
+[data-animate="scale"] {
+  transform: scale(0.96);
+}
+
+[data-animate].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+[data-delay="1"] {
+  transition-delay: 80ms;
+}
+[data-delay="2"] {
+  transition-delay: 160ms;
+}
+[data-delay="3"] {
+  transition-delay: 240ms;
+}
+[data-delay="4"] {
+  transition-delay: 320ms;
+}
+[data-delay="5"] {
+  transition-delay: 400ms;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-kenburns {
+  animation: kenburns 18s ease-out forwards;
+}
+
+.hero-copy {
+  animation: fade-in-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-copy-delay {
+  animation: fade-in-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+.hero-copy-late {
+  animation: fade-in-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-animate],
+  .hero-copy,
+  .hero-copy-delay,
+  .hero-copy-late,
+  .hero-kenburns {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

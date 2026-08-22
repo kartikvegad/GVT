@@ -1,0 +1,63 @@
+import { BrandMark } from "@/components/brand-mark";
+import { FOOTER_LINKS, NAV_LINKS } from "@/lib/site";
+
+export function Footer() {
+  return (
+    <footer className="border-t border-zinc-100 bg-white px-[clamp(0.75rem,3vw,2rem)] py-10">
+      <div className="mx-auto grid w-[min(94%,72rem)] gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="sm:col-span-2 lg:col-span-1">
+          <a href="#home" aria-label="GVT home">
+            <BrandMark />
+          </a>
+          <p className="mt-3 max-w-xs text-sm text-zinc-500">
+            MNRE-aligned solar EPC for homes, societies, and businesses across
+            Delhi NCR. Your partner from rooftop survey to 25-year support.
+          </p>
+        </div>
+        <div>
+          <p className="text-xs font-semibold tracking-wide text-zinc-400 uppercase">
+            Quick links
+          </p>
+          <nav className="mt-3 flex flex-col gap-2 text-sm text-zinc-600" aria-label="Footer">
+            {NAV_LINKS.map((link) => (
+              <a key={link.id} href={link.href} className="hover:text-navy">
+                {link.label}
+              </a>
+            ))}
+            {FOOTER_LINKS.map((link) => (
+              <a key={link.href} href={link.href} className="hover:text-navy">
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+        <div>
+          <p className="text-xs font-semibold tracking-wide text-zinc-400 uppercase">
+            Our presence
+          </p>
+          <ul className="mt-3 space-y-2 text-sm text-zinc-600">
+            <li>Solar in Gurugram</li>
+            <li>Solar in Faridabad</li>
+            <li>Solar in Delhi</li>
+            <li>Solar in Noida</li>
+            <li>Solar in Ghaziabad</li>
+          </ul>
+        </div>
+        <div>
+          <p className="text-xs font-semibold tracking-wide text-zinc-400 uppercase">
+            Contact
+          </p>
+          <ul className="mt-3 space-y-2 text-sm text-zinc-600">
+            <li>+91 98765 43210</li>
+            <li>hello@gvt.in</li>
+            <li>Sector 57, Gurugram, Haryana</li>
+          </ul>
+        </div>
+      </div>
+      <div className="mx-auto mt-8 flex w-[min(94%,72rem)] flex-col gap-2 border-t border-zinc-100 pt-6 text-xs text-zinc-400 sm:flex-row sm:justify-between">
+        <p>© {new Date().getFullYear()} GVT. Prototype website for demonstration.</p>
+        <p>Serving Delhi NCR from Gurugram, Haryana.</p>
+      </div>
+    </footer>
+  );
+}
