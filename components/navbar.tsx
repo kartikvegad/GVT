@@ -5,6 +5,29 @@ import { BrandMark } from "@/components/brand-mark";
 import { CtaButton } from "@/components/cta-button";
 import { NAV_LINKS } from "@/lib/site";
 
+type NavId = (typeof NAV_LINKS)[number]["id"];
+
+function isNavActive(id: NavId, active: string): boolean {
+  switch (id) {
+    case "home":
+      return active === "home" || active === "why-solar" || active === "about";
+    case "solutions":
+      return (
+        active === "solutions" ||
+        active === "process" ||
+        active === "equipment"
+      );
+    case "projects":
+      return active === "projects" || active === "reviews";
+    case "pricing":
+      return active === "pricing" || active === "savings" || active === "faq";
+    default: {
+      const _exhaustive: never = id;
+      return _exhaustive;
+    }
+  }
+}
+
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -70,20 +93,7 @@ export function Navbar() {
           aria-label="Primary"
         >
           {NAV_LINKS.map((link) => {
-            const isActive =
-              link.id === "home"
-                ? active === "home" || active === "why-solar" || active === "about"
-                : link.id === "solutions"
-                  ? active === "solutions" ||
-                    active === "process" ||
-                    active === "equipment"
-                  : link.id === "projects"
-                    ? active === "projects" || active === "reviews"
-                    : link.id === "pricing"
-                      ? active === "pricing" ||
-                        active === "savings" ||
-                        active === "faq"
-                      : active === link.id;
+            const isActive = isNavActive(link.id, active);
 
             return (
               <a
