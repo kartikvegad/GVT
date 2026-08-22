@@ -1,7 +1,6 @@
 export const NAV_LINKS = [
   { href: "#home", id: "home", label: "Home" },
   { href: "#solutions", id: "solutions", label: "Solutions" },
-  { href: "#services", id: "services", label: "Services" },
   { href: "#projects", id: "projects", label: "Projects" },
   { href: "#pricing", id: "pricing", label: "Pricing" },
 ] as const;
@@ -150,59 +149,26 @@ export const SOLUTIONS = [
   },
 ] as const;
 
-export const SERVICES = [
-  {
-    title: "Free Rooftop Assessment",
-    description:
-      "No-cost site visit covering roof strength, shade, sunlight hours, sanctioned load, and your last 12 months of electricity bills.",
-  },
-  {
-    title: "3D Design & Transparent Quote",
-    description:
-      "A custom 3D layout of how panels sit on your roof, with upfront pricing. No hidden costs, no guesswork.",
-  },
-  {
-    title: "Turnkey EPC Installation",
-    description:
-      "Engineering, procurement, and construction for on-grid and off-grid plants — mounting, cabling, inverter, earthing, and testing.",
-  },
-  {
-    title: "Subsidy & Net Metering",
-    description:
-      "We handle PM Surya Ghar / MNRE filing, DISCOM applications, and net metering so surplus units credit back to your bill.",
-  },
-  {
-    title: "Solar Loans & RESCO",
-    description:
-      "Easy solar loans, flexible EMIs, and zero-upfront PPA / RESCO options where we invest and you pay only for the power used.",
-  },
-  {
-    title: "AMC, Cleaning & Monitoring",
-    description:
-      "Annual maintenance, panel cleaning contracts, and IoT monitoring so generation stays high for 25 years.",
-  },
-] as const;
-
 export const PROCESS_STEPS = [
   {
     title: "Free Rooftop Assessment",
     description:
-      "Experts visit your home, check roof area, sunlight, and consumption, then recommend the right system size.",
+      "No-cost site visit covering roof strength, shade, sunlight hours, sanctioned load, and your last 12 months of bills.",
   },
   {
-    title: "3D Design & Quotation",
+    title: "3D Design & Quote",
     description:
-      "You see a 3D layout of the plant and a transparent quote before anything is ordered or installed.",
+      "A custom 3D layout and transparent price. Pay upfront, take a solar loan, or choose RESCO and pay only for the power you use.",
   },
   {
     title: "Paperwork & Installation",
     description:
-      "Subsidy, DISCOM, and net-metering files are handled for you. Certified crews install and test the system — typically 3–5 days for a home rooftop.",
+      "PM Surya Ghar / MNRE filing, DISCOM, and net metering are handled for you. Certified crews typically install a home rooftop in 3–5 days.",
   },
   {
-    title: "Long-Term Care",
+    title: "AMC, Cleaning & Monitoring",
     description:
-      "Cleaning, servicing, and performance checks continue after commissioning so savings stay consistent year after year.",
+      "Annual maintenance, panel cleaning, and IoT monitoring so generation stays high for 25 years.",
   },
 ] as const;
 

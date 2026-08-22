@@ -11,7 +11,6 @@ import { Process } from "@/components/process";
 import { Projects } from "@/components/projects";
 import { Quality } from "@/components/quality";
 import { Savings } from "@/components/savings";
-import { Services } from "@/components/services";
 import { Solutions } from "@/components/solutions";
 import { Testimonials } from "@/components/testimonials";
 import { Trust } from "@/components/trust";
@@ -30,7 +29,6 @@ export default function Home() {
         <WhySolar />
         <About />
         <Solutions />
-        <Services />
         <Process />
         <Quality />
         <Marquee items={PARTNERS} />

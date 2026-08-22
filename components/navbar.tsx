@@ -17,7 +17,6 @@ export function Navbar() {
       "why-solar",
       "about",
       "solutions",
-      "services",
       "process",
       "equipment",
       "projects",
@@ -74,8 +73,8 @@ export function Navbar() {
             const isActive =
               link.id === "home"
                 ? active === "home" || active === "why-solar" || active === "about"
-                : link.id === "services"
-                  ? active === "services" ||
+                : link.id === "solutions"
+                  ? active === "solutions" ||
                     active === "process" ||
                     active === "equipment"
                   : link.id === "projects"
