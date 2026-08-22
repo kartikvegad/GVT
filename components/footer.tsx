@@ -1,17 +1,17 @@
 import { BrandMark } from "@/components/brand-mark";
-import { FOOTER_LINKS, NAV_LINKS, PRESENCE_CITIES } from "@/lib/site";
+import { CONTACT, FOOTER_LINKS, NAV_LINKS } from "@/lib/site";
 
 export function Footer() {
   return (
     <footer className="border-t border-zinc-100 bg-white px-[clamp(0.75rem,3vw,2rem)] py-10">
-      <div className="mx-auto grid w-[min(94%,72rem)] gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto grid w-[min(94%,72rem)] gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <div className="sm:col-span-2 lg:col-span-1">
           <a href="#home" aria-label="GVT home">
             <BrandMark />
           </a>
           <p className="mt-3 max-w-xs text-sm text-zinc-500">
             MNRE-aligned solar EPC for homes, societies, and businesses across
-            India. Your partner from rooftop survey to 25-year support.
+            India — from rooftop survey to after-sales.
           </p>
         </div>
         <div>
@@ -33,22 +33,12 @@ export function Footer() {
         </div>
         <div>
           <p className="text-xs font-semibold tracking-wide text-zinc-400 uppercase">
-            Our presence
-          </p>
-          <ul className="mt-3 columns-2 space-y-2 text-sm text-zinc-600">
-            {PRESENCE_CITIES.map((city) => (
-              <li key={city}>Solar in {city}</li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <p className="text-xs font-semibold tracking-wide text-zinc-400 uppercase">
             Contact
           </p>
           <ul className="mt-3 space-y-2 text-sm text-zinc-600">
-            <li>+91 98765 43210</li>
-            <li>hello@gvt.in</li>
-            <li>Pan-India installations</li>
+            <li>{CONTACT.phone}</li>
+            <li>{CONTACT.email}</li>
+            <li>{CONTACT.office}</li>
           </ul>
         </div>
       </div>

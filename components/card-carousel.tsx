@@ -51,15 +51,15 @@ export function CardCarousel({ children, autoMs = 5500 }: CardCarouselProps) {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="overflow-hidden">
+      <div className="overflow-hidden px-1 py-4">
         <div
-          className="flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+          className="flex items-stretch transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
           style={{ transform: `translateX(-${index * (100 / perView)}%)` }}
         >
           {slides.map((child, childIndex) => (
             <div
               key={childIndex}
-              className="shrink-0 px-2.5"
+              className="flex min-h-0 shrink-0 px-2.5"
               style={{ flex: `0 0 ${100 / perView}%` }}
             >
               {child}

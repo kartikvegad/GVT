@@ -1,8 +1,12 @@
+import { CardFillBlob, CardMoreInfo } from "@/components/card-fill";
 import { EQUIPMENT, WHY_CHOOSE } from "@/lib/site";
 
 export function Quality() {
   return (
-    <section id="equipment" className="px-[clamp(0.75rem,3vw,2rem)] py-[clamp(3.5rem,8vw,6rem)]">
+    <section
+      id="quality"
+      className="px-[clamp(0.75rem,3vw,2rem)] pt-[clamp(4.75rem,10vw,8rem)] pb-8"
+    >
       <div className="mx-auto w-[min(94%,72rem)]">
         <div className="mx-auto max-w-2xl text-center" data-animate>
           <p className="text-sm font-semibold tracking-wide text-navy uppercase">
@@ -42,21 +46,21 @@ export function Quality() {
               <article
                 key={item.title}
                 data-animate
-                className="rounded-[clamp(1.1rem,2.5vw,1.4rem)] border border-zinc-200 bg-zinc-50 p-6 transition duration-300 hover:-translate-y-1 hover:shadow-md"
+                className="card-fill group relative z-0 overflow-hidden rounded-[clamp(1.1rem,2.5vw,1.4rem)] border border-zinc-200 bg-zinc-50 p-6"
               >
-                <h4 className="text-base font-bold text-zinc-900">{item.title}</h4>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-                  {item.description}
-                </p>
+                <CardFillBlob />
+                <div className="relative z-10 flex h-full flex-col">
+                  <h4 className="text-base font-bold text-zinc-900 duration-500 group-hover:text-white">
+                    {item.title}
+                  </h4>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-500 duration-500 group-hover:text-white/80">
+                    {item.description}
+                  </p>
+                  <CardMoreInfo />
+                </div>
               </article>
             ))}
           </div>
-        </div>
-
-        <div className="mt-14 text-center" data-animate>
-          <p className="text-sm font-medium text-zinc-400">
-            Modules and inverters from India’s leading manufacturers
-          </p>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CardFillBlob, CardMoreInfo } from "@/components/card-fill";
 import { FeatureIcon } from "@/components/feature-icon";
 import { FEATURES } from "@/lib/site";
 
@@ -9,7 +10,7 @@ export function WhySolar() {
   return (
     <section
       id="why-solar"
-      className="px-[clamp(0.75rem,3vw,2rem)] pb-[clamp(3.5rem,8vw,6rem)]"
+      className="px-[clamp(0.75rem,3vw,2rem)] py-[clamp(4.75rem,10vw,8rem)]"
     >
       <div className="mx-auto w-[min(94%,72rem)]">
         <div className="mx-auto max-w-2xl text-center" data-animate>
@@ -17,8 +18,9 @@ export function WhySolar() {
             Why Switch to Solar?
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-zinc-500 sm:text-base">
-            India has 300+ sunny days a year. Going solar cuts DISCOM bills,
-            keeps the AC running, and turns your rooftop into a green powerhouse.
+            India has 300+ sunny days a year. Going solar keeps the AC running,
+            feeds clean power into the grid, and turns your rooftop into a
+            green powerhouse.
           </p>
         </div>
 
@@ -68,13 +70,21 @@ function FeatureCard({
     <article
       data-animate
       data-delay={String(delay)}
-      className="flex flex-1 flex-col rounded-[clamp(1.1rem,2.5vw,1.4rem)] border border-zinc-200 bg-white p-[clamp(1.25rem,2.5vw,1.75rem)] transition duration-300 hover:-translate-y-1 hover:shadow-md"
+      className="card-fill group relative z-0 flex flex-1 flex-col overflow-hidden rounded-[clamp(1.1rem,2.5vw,1.4rem)] border border-zinc-200 bg-white p-[clamp(1.25rem,2.5vw,1.75rem)]"
     >
-      <div className="text-icon-blue">
-        <FeatureIcon id={id} />
+      <CardFillBlob />
+      <div className="relative z-10 flex h-full flex-col">
+        <div className="text-icon-blue duration-500 group-hover:text-white">
+          <FeatureIcon id={id} />
+        </div>
+        <h3 className="mt-5 text-lg font-bold text-zinc-900 duration-500 group-hover:text-white">
+          {title}
+        </h3>
+        <p className="mt-2 text-sm leading-relaxed text-zinc-500 duration-500 group-hover:text-white/80">
+          {description}
+        </p>
+        <CardMoreInfo />
       </div>
-      <h3 className="mt-5 text-lg font-bold text-zinc-900">{title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-zinc-500">{description}</p>
     </article>
   );
 }

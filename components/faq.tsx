@@ -7,7 +7,7 @@ export function Faq() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="faq" className="px-[clamp(0.75rem,3vw,2rem)] py-[clamp(3.5rem,8vw,6rem)]">
+    <section id="faq" className="px-[clamp(0.75rem,3vw,2rem)] py-[clamp(4.75rem,10vw,8rem)]">
       <div className="mx-auto w-[min(94%,40rem)]">
         <div className="text-center" data-animate>
           <p className="text-sm font-semibold tracking-wide text-navy uppercase">
