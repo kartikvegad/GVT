@@ -12,11 +12,21 @@ export const FOOTER_LINKS = [
   { href: "#contact", label: "Contact" },
 ] as const;
 
+export const DESIGN_CREDIT = {
+  label: "Designed by",
+  name: "DOT",
+  href: "https://dot-site.vercel.app/",
+  logoSrc: "/Dot.svg",
+} as const;
+
 export const CONTACT = {
-  phone: "+91 XXXXX XXXXX",
-  email: "hello@email.com",
-  office: "Office address coming soon",
-  hours: "Hours coming soon",
+  phone: "+91 95600 20713",
+  phoneHref: "tel:+919560020713",
+  email: "info@gvtworld.com",
+  emailHref: "mailto:info@gvtworld.com",
+  office: "A801, Plot-5D, Dwarka, New Delhi-110077",
+  hours: "10 am to 6 pm",
+  region: "Delhi, UP, Haryana, Rajasthan, Uttarakhand, and Punjab",
 } as const;
 
 export const STATS = [
@@ -36,12 +46,12 @@ export const HERO_SLIDES = [
     image: "/images/rooftop.jpg",
     alt: "Residential rooftop solar installation",
     title: "Turn Your Rooftop into a Green Powerhouse",
-    text: "Each 10 kW plant is equal to planting 500+ trees a year. Stay cool on AC while your roof quietly feeds the grid through net metering.",
+    text: "Designed for Indian heat, shade, and DISCOM rules — so your roof offsets daytime load and exports surplus through net metering.",
   },
   {
     image: "/images/solar-farm.jpg",
     alt: "Commercial solar array across an open field",
-    title: "Solar EPC for Homes and Industry",
+    title: "Solar EPC for Home, Society and Industrial",
     text: "From first site visit to commissioning — on-grid or hybrid — designed for Indian roofs, heat, and DISCOM rules.",
   },
 ] as const;
@@ -61,19 +71,15 @@ export const MARQUEE_TAGS = [
 
 export const PRESENCE_CITIES = [
   "Delhi",
-  "Mumbai",
-  "Bengaluru",
-  "Hyderabad",
-  "Chennai",
-  "Pune",
-  "Kolkata",
-  "Ahmedabad",
+  "Noida",
+  "Ghaziabad",
+  "Gurugram",
+  "Faridabad",
   "Jaipur",
   "Lucknow",
   "Chandigarh",
-  "Kochi",
-  "Indore",
-  "Surat",
+  "Dehradun",
+  "Ludhiana",
 ] as const;
 
 export const TRUST_IMAGES = [
@@ -100,27 +106,27 @@ export const FEATURES: {
 }[] = [
   {
     id: "bills",
-    title: "Clean Daytime Power",
+    title: "Daytime Power You Own",
     description:
-      "Run ACs and appliances on your own rooftop generation — with extra units going back to the grid through net metering.",
+      "Offset peak daytime use from your own roof. Surplus units go back through net metering under your DISCOM’s rules.",
   },
   {
     id: "independence",
-    title: "Energy Independence",
+    title: "Backup When the Grid Drops",
     description:
-      "On-grid, off-grid, or hybrid systems with optional storage so essential loads stay on during load shedding.",
+      "On-grid or hybrid layouts with optional storage so lights, Wi‑Fi, and critical loads stay up during outages.",
   },
   {
     id: "eco",
-    title: "Eco Friendly",
+    title: "Lower Carbon, Clearer Numbers",
     description:
-      "A 10 kW rooftop plant is equal to planting 500+ trees a year — cutting carbon while India has 300+ sunny days.",
+      "Generation you can track month to month — less grid draw, a cleaner footprint, and paperwork handled with you.",
   },
   {
     id: "value",
-    title: "Built Around Your Roof",
+    title: "Sized to Your Roof",
     description:
-      "Every layout is sized to your sanctioned load, shade, and available area — not a one-size-fits-all kit.",
+      "We survey shade, structure, and sanctioned load first, then build a layout for your house, society, or plant.",
   },
 ];
 
@@ -349,20 +355,16 @@ export const PROPERTY_TYPES = [
 
 export const CITIES = [
   "Delhi",
-  "Mumbai",
-  "Bengaluru",
-  "Hyderabad",
-  "Chennai",
-  "Pune",
-  "Kolkata",
-  "Ahmedabad",
+  "Noida",
+  "Ghaziabad",
+  "Gurugram",
+  "Faridabad",
   "Jaipur",
   "Lucknow",
   "Chandigarh",
-  "Kochi",
-  "Indore",
-  "Surat",
-  "Other",
+  "Dehradun",
+  "Ludhiana",
+  "Other (UP / Haryana / Rajasthan / Uttarakhand / Punjab)",
 ] as const;
 
 export const SOCIAL_LINKS = [
@@ -370,9 +372,9 @@ export const SOCIAL_LINKS = [
   { id: "twitter", label: "X", href: "#" },
   { id: "facebook", label: "Facebook", href: "#" },
   { id: "linkedin", label: "LinkedIn", href: "#" },
-  { id: "whatsapp", label: "WhatsApp", href: "#" },
+  { id: "whatsapp", label: "WhatsApp", href: "https://wa.me/919560020713" },
   { id: "youtube", label: "YouTube", href: "#" },
-  { id: "phone", label: "Phone", href: "#" },
+  { id: "phone", label: "Phone", href: "tel:+919560020713" },
   { id: "telegram", label: "Telegram", href: "#" },
-  { id: "email", label: "Email", href: "#" },
+  { id: "email", label: "Email", href: "mailto:info@gvtworld.com" },
 ] as const;

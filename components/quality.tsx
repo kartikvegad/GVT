@@ -1,4 +1,5 @@
-import { CardFillBlob, CardMoreInfo } from "@/components/card-fill";
+import { CardFillBlob } from "@/components/card-fill";
+import { CtaButton } from "@/components/cta-button";
 import { EQUIPMENT, WHY_CHOOSE } from "@/lib/site";
 
 export function Quality() {
@@ -46,17 +47,19 @@ export function Quality() {
                 className="card-fill group relative z-0 overflow-hidden rounded-[clamp(1.1rem,2.5vw,1.4rem)] border border-zinc-200 bg-zinc-50 p-6"
               >
                 <CardFillBlob />
-                <div className="relative z-10 flex h-full flex-col">
+                <div className="relative z-10">
                   <h4 className="text-base font-bold text-zinc-900 duration-500 group-hover:text-white">
                     {item.title}
                   </h4>
                   <p className="mt-2 text-sm leading-relaxed text-zinc-500 duration-500 group-hover:text-white/80">
                     {item.description}
                   </p>
-                  <CardMoreInfo />
                 </div>
               </article>
             ))}
+          </div>
+          <div className="mt-8 flex justify-center" data-animate>
+            <CtaButton href="#contact">More Info</CtaButton>
           </div>
         </div>
       </div>

@@ -31,13 +31,17 @@ export function Contact() {
               <span className="block text-xs font-semibold tracking-wide text-zinc-400 uppercase">
                 Phone
               </span>
-              {CONTACT.phone}
+              <a href={CONTACT.phoneHref} className="hover:text-navy">
+                {CONTACT.phone}
+              </a>
             </li>
             <li>
               <span className="block text-xs font-semibold tracking-wide text-zinc-400 uppercase">
                 Email
               </span>
-              {CONTACT.email}
+              <a href={CONTACT.emailHref} className="hover:text-navy">
+                {CONTACT.email}
+              </a>
             </li>
             <li>
               <span className="block text-xs font-semibold tracking-wide text-zinc-400 uppercase">
@@ -49,7 +53,7 @@ export function Contact() {
               <span className="block text-xs font-semibold tracking-wide text-zinc-400 uppercase">
                 Serving
               </span>
-              Homes and businesses across India
+              {CONTACT.region}
             </li>
             <li>
               <span className="block text-xs font-semibold tracking-wide text-zinc-400 uppercase">
@@ -96,7 +100,7 @@ export function Contact() {
                   type="tel"
                   autoComplete="tel"
                   className="mt-1.5 w-full min-h-11 rounded-xl border border-zinc-200 px-3 py-3 text-sm outline-none focus:border-navy"
-                  placeholder="+91 98XXX XXXXX"
+                  placeholder="+91 95600 20713"
                 />
               </label>
               <label className="block text-sm font-medium text-zinc-700">

@@ -15,12 +15,13 @@ export function WhySolar() {
       <div className="mx-auto w-[min(94%,72rem)]">
         <div className="mx-auto max-w-2xl text-center" data-animate>
           <h2 className="text-[clamp(1.75rem,4vw,2.25rem)] font-bold tracking-tight text-zinc-900">
-            Why Switch to Solar?
+            Why homeowners and businesses choose solar with GVT
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-zinc-500 sm:text-base">
-            India has 300+ sunny days a year. Going solar keeps the AC running,
-            feeds clean power into the grid, and turns your rooftop into a
-            green powerhouse.
+            Across Delhi, UP, Haryana, Rajasthan, Uttarakhand, and Punjab, we
+            design rooftop plants around your load, DISCOM rules, and roof —
+            so the system works for how you actually use power, not as a
+            one-size kit.
           </p>
         </div>
 

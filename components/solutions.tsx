@@ -10,7 +10,7 @@ export function Solutions() {
             Services
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
-            Turn your rooftop into a green powerhouse
+            Solar for homes, societies, and industry
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-zinc-500 sm:text-base">
             Residential, society, and industrial plants — on-grid, hybrid, or
