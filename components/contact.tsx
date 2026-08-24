@@ -3,12 +3,52 @@
 import { FormEvent, useState } from "react";
 import { CITIES, CONTACT, PROPERTY_TYPES } from "@/lib/site";
 
-export function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+type FormStatus = "idle" | "loading" | "success" | "error";
 
-  function onSubmit(event: FormEvent<HTMLFormElement>) {
+export function Contact() {
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [error, setError] = useState("");
+
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
+    const form = event.currentTarget;
+    const data = new FormData(form);
+
+    setStatus("loading");
+    setError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          phone: data.get("phone"),
+          city: data.get("city"),
+          property: data.get("property"),
+          timeline: data.get("timeline"),
+          message: data.get("message"),
+        }),
+      });
+
+      const payload = (await response.json().catch(() => null)) as {
+        error?: string;
+      } | null;
+
+      if (!response.ok) {
+        throw new Error(payload?.error || "Could not send your inquiry.");
+      }
+
+      form.reset();
+      setStatus("success");
+    } catch (err) {
+      setStatus("error");
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Could not send your inquiry. Please try again.",
+      );
+    }
   }
 
   return (
@@ -22,8 +62,8 @@ export function Contact() {
             Book a site visit
           </h2>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-zinc-500 sm:text-base">
-            Share a few details and we will call with a rooftop size and next
-            steps.
+            Share a few details and we will email you back with a rooftop size
+            and next steps.
           </p>
 
           <ul className="mt-8 space-y-4 text-sm text-zinc-700">
@@ -65,17 +105,17 @@ export function Contact() {
         </div>
 
         <div className="rounded-[clamp(1.1rem,2.5vw,1.4rem)] border border-zinc-200 bg-white p-6 sm:p-8" data-animate="right">
-          {submitted ? (
+          {status === "success" ? (
             <div className="flex min-h-64 flex-col justify-center">
               <h3 className="text-xl font-bold text-zinc-900">Request received</h3>
               <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-                Thanks. We’ll get back to you shortly with a rooftop plan
-                and next steps.
+                Thanks. Your inquiry was emailed to our team — we will get back
+                with a rooftop plan and next steps.
               </p>
               <button
                 type="button"
                 className="mt-6 self-start text-sm font-semibold text-navy underline-offset-4 hover:underline"
-                onClick={() => setSubmitted(false)}
+                onClick={() => setStatus("idle")}
               >
                 Send another request
               </button>
@@ -153,11 +193,15 @@ export function Contact() {
                   placeholder="Roof type, sanctioned load, or any questions…"
                 />
               </label>
+              {status === "error" && error ? (
+                <p className="sm:col-span-2 text-sm text-red-600">{error}</p>
+              ) : null}
               <button
                 type="submit"
-                className="sm:col-span-2 inline-flex items-center justify-center rounded-full bg-navy px-5 py-3 text-sm font-semibold text-white transition hover:bg-navy-hover"
+                disabled={status === "loading"}
+                className="sm:col-span-2 inline-flex items-center justify-center rounded-full bg-navy px-5 py-3 text-sm font-semibold text-white transition hover:bg-navy-hover disabled:cursor-not-allowed disabled:opacity-70"
               >
-                Book a site visit
+                {status === "loading" ? "Sending…" : "Book a site visit"}
               </button>
             </form>
           )}

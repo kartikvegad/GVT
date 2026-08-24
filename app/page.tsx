@@ -11,6 +11,7 @@ import { Projects } from "@/components/projects";
 import { Quality } from "@/components/quality";
 import { Solutions } from "@/components/solutions";
 import { Trust } from "@/components/trust";
+import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { WhySolar } from "@/components/why-solar";
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }

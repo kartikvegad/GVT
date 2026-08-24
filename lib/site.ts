@@ -22,6 +22,8 @@ export const DESIGN_CREDIT = {
 export const CONTACT = {
   phone: "+91 95600 20713",
   phoneHref: "tel:+919560020713",
+  whatsappHref: "https://wa.me/919560020713",
+  smsHref: "sms:+919560020713",
   email: "info@gvtworld.com",
   emailHref: "mailto:info@gvtworld.com",
   office: "A801, Plot-5D, Dwarka, New Delhi-110077",
@@ -141,7 +143,7 @@ export const SOLUTIONS = [
   {
     title: "Housing Societies",
     description:
-      "Shared solar for RWAs and apartment complexes — offset lifts, lights, and pumps with a clear layout for residents across India.",
+      "Shared solar for RWAs and apartment complexes — offset lifts, lights, and pumps with a clear layout for residents. End-to-end delivery typically takes 2–3 months.",
     image: "/images/city.jpg",
     alt: "Apartment buildings suitable for society solar",
   },
@@ -179,9 +181,9 @@ export const PROCESS_STEPS = [
   {
     id: "install",
     title: "Paperwork & Installation",
-    duration: "3–5 days on site",
+    duration: "Home 3–5 days · Society 2–3 months",
     description:
-      "PM Surya Ghar / MNRE filing, DISCOM, and net metering are handled with you. A typical home rooftop is installed in 3–5 days.",
+      "PM Surya Ghar / MNRE filing, DISCOM, and net metering are handled with you. A typical home rooftop is installed in 3–5 days. Housing society projects usually take 2–3 months end to end.",
   },
   {
     id: "care",
@@ -329,7 +331,7 @@ export const FAQS = [
   {
     question: "How long does installation take?",
     answer:
-      "A typical residential rooftop takes 3–5 days on site. Larger commercial and industrial plants take longer depending on capacity and grid approvals.",
+      "A typical residential rooftop takes 3–5 days on site. Housing society projects usually take 2–3 months end to end. Commercial and industrial plants take longer depending on capacity and grid approvals.",
   },
 ] as const;
 
