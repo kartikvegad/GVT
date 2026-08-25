@@ -244,8 +244,12 @@ section[id] {
   z-index: 80;
   display: grid;
   place-items: center;
-  background: #ffffff;
-  transition: opacity 0.45s ease, visibility 0.45s ease;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 42%, rgba(22, 58, 95, 0.07), transparent 65%),
+    #ffffff;
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .logo-loader.is-leaving {
@@ -254,64 +258,89 @@ section[id] {
   pointer-events: none;
 }
 
+.logo-loader.is-leaving .logo-loader-stage {
+  transform: translate3d(0, -0.75rem, 0) scale(0.98);
+  opacity: 0;
+}
+
+.logo-loader-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  transition:
+    opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .logo-loader-mark {
   position: relative;
   display: grid;
   place-items: center;
-  width: 10.5rem;
-  height: 10.5rem;
-}
-
-.logo-loader-ring {
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-  border: 1px dashed #163a5f;
-  opacity: 0.35;
-  animation: logo-orbit 8s linear infinite;
-}
-
-.logo-loader-glow {
-  position: absolute;
-  inset: 12%;
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(22, 58, 95, 0.12), transparent 70%);
-  animation: logo-glow 1.8s ease-in-out infinite;
+  animation: logo-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .logo-loader-img {
-  position: relative;
-  z-index: 1;
-  width: 6.5rem;
+  width: clamp(5.5rem, 18vw, 7.25rem);
   height: auto;
-  animation: logo-breathe 1.8s ease-in-out infinite;
 }
 
-@keyframes logo-orbit {
+.logo-loader-track {
+  position: relative;
+  width: 5.5rem;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(22, 58, 95, 0.12);
+}
+
+.logo-loader-bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 40%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #163a5f, #2f6fb0);
+  animation: logo-progress 1.1s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+}
+
+.logo-loader-caption {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(22, 58, 95, 0.55);
+  animation: logo-caption 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+@keyframes logo-reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 0.6rem, 0) scale(0.94);
+  }
   to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes logo-breathe {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.06);
-  }
-}
-
-@keyframes logo-glow {
-  0%,
-  100% {
-    opacity: 0.45;
-    transform: scale(0.92);
-  }
-  50% {
     opacity: 1;
-    transform: scale(1.08);
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes logo-caption {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 0.35rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes logo-progress {
+  0% {
+    transform: translate3d(-120%, 0, 0);
+  }
+  100% {
+    transform: translate3d(320%, 0, 0);
   }
 }
 
@@ -421,7 +450,6 @@ section[id] {
 
   .card-fill:active h3,
   .card-fill:active p,
-  .card-fill:active .card-more-info,
   .card-fill:active .text-icon-blue {
     color: #fff;
   }
@@ -435,38 +463,6 @@ section[id] {
   .card-fill:hover .card-fill-blob {
     transform: scale(18);
   }
-}
-
-.card-more-info {
-  position: relative;
-  z-index: 10;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  margin-top: auto;
-  padding-top: 1.1em;
-  font-size: 0.8em;
-  font-weight: 600;
-  color: var(--navy);
-  transition: color 0.5s ease;
-}
-
-.group:hover .card-more-info {
-  color: #ffffff;
-}
-
-.card-more-info-label {
-  position: relative;
-}
-
-.card-more-info-label::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 0.16em;
-  background: currentColor;
 }
 
 .img-card {
@@ -534,9 +530,9 @@ section[id] {
   .hero-copy-late,
   .hero-kenburns,
   .marquee-track,
-  .logo-loader-ring,
-  .logo-loader-img,
-  .logo-loader-glow,
+  .logo-loader-mark,
+  .logo-loader-bar,
+  .logo-loader-caption,
   .card-fill-blob {
     animation: none;
     opacity: 1;

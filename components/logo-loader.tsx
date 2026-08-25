@@ -9,7 +9,7 @@ export function LogoLoader() {
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const minMs = reduced ? 0 : 1100;
+    const minMs = reduced ? 0 : 1400;
     const started = performance.now();
     let hidden = false;
 
@@ -19,7 +19,7 @@ export function LogoLoader() {
       const wait = Math.max(0, minMs - (performance.now() - started));
       window.setTimeout(() => {
         setLeaving(true);
-        window.setTimeout(() => setVisible(false), reduced ? 0 : 450);
+        window.setTimeout(() => setVisible(false), reduced ? 0 : 550);
       }, wait);
     }
 

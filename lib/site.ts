@@ -71,19 +71,6 @@ export const MARQUEE_TAGS = [
   "Pan-India EPC",
 ] as const;
 
-export const PRESENCE_CITIES = [
-  "Delhi",
-  "Noida",
-  "Ghaziabad",
-  "Gurugram",
-  "Faridabad",
-  "Jaipur",
-  "Lucknow",
-  "Chandigarh",
-  "Dehradun",
-  "Ludhiana",
-] as const;
-
 export const TRUST_IMAGES = [
   {
     src: "/images/solar-farm.jpg",
@@ -338,7 +325,7 @@ export const FAQS = [
 export const PARTNERS = [
   { name: "Adani", src: "/partners/adani.svg" },
   { name: "Tata Power Solar", src: "/partners/tata-power-solar.png" },
-  { name: "Waaree", src: "/partners/waaree1.avif" },
+  { name: "Waaree", src: "/partners/waaree.png" },
   { name: "Vikram Solar", src: "/partners/vikram-solar.svg" },
   { name: "Havells", src: "/partners/havells.svg" },
   { name: "Polycab", src: "/partners/polycab.png" },
@@ -367,16 +354,4 @@ export const CITIES = [
   "Dehradun",
   "Ludhiana",
   "Other (UP / Haryana / Rajasthan / Uttarakhand / Punjab)",
-] as const;
-
-export const SOCIAL_LINKS = [
-  { id: "instagram", label: "Instagram", href: "#" },
-  { id: "twitter", label: "X", href: "#" },
-  { id: "facebook", label: "Facebook", href: "#" },
-  { id: "linkedin", label: "LinkedIn", href: "#" },
-  { id: "whatsapp", label: "WhatsApp", href: "https://wa.me/919560020713" },
-  { id: "youtube", label: "YouTube", href: "#" },
-  { id: "phone", label: "Phone", href: "tel:+919560020713" },
-  { id: "telegram", label: "Telegram", href: "#" },
-  { id: "email", label: "Email", href: "mailto:info@gvtworld.com" },
 ] as const;

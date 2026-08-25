@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CardFillBlob, CardMoreInfo } from "@/components/card-fill";
+import { CardFillBlob } from "@/components/card-fill";
 import { FeatureIcon } from "@/components/feature-icon";
 import { FEATURES } from "@/lib/site";
 
@@ -8,10 +8,7 @@ export function WhySolar() {
   const right = FEATURES.slice(2);
 
   return (
-    <section
-      id="why-solar"
-      className="section-pad"
-    >
+    <section id="why-solar" className="section-pad">
       <div className="mx-auto w-[min(94%,72rem)]">
         <div className="mx-auto max-w-2xl text-center" data-animate>
           <h2 className="text-[clamp(1.75rem,4vw,2.25rem)] font-bold tracking-tight text-zinc-900">
@@ -74,7 +71,7 @@ function FeatureCard({
       className="card-fill group relative z-0 flex flex-1 flex-col overflow-hidden rounded-[clamp(1.1rem,2.5vw,1.4rem)] border border-zinc-200 bg-white p-[clamp(1.25rem,2.5vw,1.75rem)]"
     >
       <CardFillBlob />
-      <div className="relative z-10 flex h-full flex-col">
+      <div className="relative z-10">
         <div className="text-icon-blue duration-500 group-hover:text-white">
           <FeatureIcon id={id} />
         </div>
@@ -84,7 +81,6 @@ function FeatureCard({
         <p className="mt-2 text-sm leading-relaxed text-zinc-500 duration-500 group-hover:text-white/80">
           {description}
         </p>
-        <CardMoreInfo />
       </div>
     </article>
   );
