@@ -276,49 +276,49 @@ export const PROJECTS = [
 
 export const FAQS = [
   {
-    question: "Which solar system is best for Indian homes?",
+    question: "Which solar system is suitable for an Indian home?",
     answer:
-      "On-grid rooftop solar is the usual choice. It needs little maintenance and lets you export extra units to the grid through net metering.",
+      "For most residential properties, a grid-connected rooftop solar system is the most practical option. It needs minimal upkeep and, with net metering, surplus electricity can be sent back to the grid.",
   },
   {
-    question: "Can an AC run on solar panels?",
+    question: "Can I run my air conditioner using solar power?",
     answer:
-      "Yes. With a 3 kW system or larger, an AC can run efficiently during the day on your own rooftop generation.",
+      "Yes. A properly sized rooftop plant can comfortably support an AC during daylight hours. For regular AC usage, around 3 kW or more is generally a good starting point, depending on your overall electricity consumption.",
   },
   {
-    question: "How much roof space does a 10 kW system need?",
+    question: "How much space is required for a 10 kW solar plant?",
     answer:
-      "Plan for about 550–650 sq. ft. of unshaded rooftop. Higher-efficiency TopCon modules can reduce the footprint slightly.",
+      "A 10 kW installation generally needs about 550–650 sq. ft. of usable, shadow-free roof area. Exact space depends on panel technology and module efficiency. High-efficiency TopCon panels help make better use of limited roof space.",
   },
   {
-    question: "How do I avail a solar subsidy?",
+    question: "What is the process for getting a solar subsidy?",
     answer:
-      "If you have a valid domestic connection and have not claimed subsidy before, we file PM Surya Ghar / MNRE paperwork and DISCOM net-metering with you.",
+      "Eligible residential consumers can apply under the PM Surya Ghar scheme. We assist with documentation, the subsidy process, and DISCOM coordination for net metering so the paperwork stays simpler for you.",
   },
   {
-    question: "What types of systems do you install?",
+    question: "What kind of solar installations do you undertake?",
     answer:
-      "On-grid, off-grid, and hybrid plants for homes, housing societies, and commercial or industrial rooftops across India.",
+      "We design and install on-grid, off-grid, and hybrid systems based on the property’s needs — covering individual homes, residential societies, commercial properties, and industrial facilities across India.",
   },
   {
-    question: "What warranties do panels and inverters carry?",
+    question: "What warranty can I expect on solar panels and inverters?",
     answer:
-      "Tier-1 / TopCon modules typically carry a 25–30 year performance warranty from the manufacturer. Smart inverters and BOS come with their own cover, often 10+ years on inverters.",
+      "Warranty terms depend on the manufacturer and equipment selected. Premium modules commonly offer 25–30 years of performance coverage, while inverters and other components have separate product warranties. We share the applicable details before installation.",
   },
   {
-    question: "Do you help with subsidy and net metering?",
+    question: "Do you take care of subsidy and net metering formalities?",
     answer:
-      "Yes. We walk you through MNRE / PM Surya Ghar filing and DISCOM net-metering so you are not left chasing files alone.",
+      "Yes. Our team assists with PM Surya Ghar and MNRE documentation as well as DISCOM net-metering procedures — so the administrative side is handled with the installation, not left for you to chase alone.",
   },
   {
-    question: "Do you provide AMC and panel cleaning?",
+    question: "Do you offer solar maintenance and panel cleaning?",
     answer:
-      "We offer annual maintenance, audits, and cleaning so dust and soiling do not cut into generation.",
+      "Yes. We provide maintenance and cleaning so the system keeps operating efficiently. Regular inspections and removing dust or dirt help prevent unnecessary drops in generation.",
   },
   {
-    question: "How long does installation take?",
+    question: "How much time does a solar installation usually take?",
     answer:
-      "A typical residential rooftop takes 3–5 days on site. Housing society projects usually take 2–3 months end to end. Commercial and industrial plants take longer depending on capacity and grid approvals.",
+      "A standard residential rooftop can generally be completed in 3–5 days once approvals and preparations are in place. Larger housing society projects may take around 2–3 months from planning through completion. Commercial and industrial installs vary with system size, site conditions, and approvals.",
   },
 ] as const;
 
